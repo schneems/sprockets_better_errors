@@ -1,0 +1,5 @@
+module SprocketsBetterErrors
+end
+
+require 'sprockets_better_errors/sprockets_rails_helper'
+require 'sprockets_better_errors/sprockets_railtie'

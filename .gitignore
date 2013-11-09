@@ -1,0 +1,4 @@
+*.log
+*.gem
+Gemfile.lock
+tmp/
