@@ -1,4 +1,4 @@
-# Sprockets Better Errors
+# Sprockets Better Errors [![Build Status](https://travis-ci.org/schneems/sprockets_better_errors.png?branch=master)](https://travis-ci.org/schneems/sprockets_better_errors)
 
 ## What
 
