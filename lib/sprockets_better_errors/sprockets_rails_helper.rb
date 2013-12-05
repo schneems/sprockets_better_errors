@@ -89,7 +89,7 @@ module Sprockets::Rails::Helper
     # Returns true when an asset will not available after precompile is run
     def asset_needs_precompile?(source, filename)
       return true  unless Sprockets::Rails::Helper.assets
-      return false if Sprockets::Rails::Helper.assets.send(:matches_filter, Sprockets::Rails::Helper.precompile || [], source, filename)
+      return false if Sprockets::Rails::Helper.assets.send(:matches_filter, Sprockets::Rails::Helper.precompile || [], source.to_s, filename)
       true
     end
 end
