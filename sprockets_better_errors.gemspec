@@ -18,6 +18,15 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
+msg = <<-MSG
+
+To enable sprockets_better_errors
+add this line to your `config/environments/development.rb:
+  config.assets.raise_production_errors = true
+
+MSG
+
+  gem.post_install_message = msg
 
   gem.add_dependency 'sprockets-rails', ">= 1.0.0"
   gem.add_development_dependency "capybara", ">= 0.4.0"

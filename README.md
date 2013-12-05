@@ -36,6 +36,12 @@ Then run:
 $ bundle install
 ```
 
+And add this line to your `config/environments/development.rb`:
+
+```
+config.assets.raise_production_errors = true
+```
+
 Now develop with some sprockets super powers!
 
 
