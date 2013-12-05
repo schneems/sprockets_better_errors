@@ -85,6 +85,15 @@ Why not add this code upstream? I allready tried, there are several PR awaiting 
 - [Raise on improper dependency use](https://github.com/rails/sprockets-rails/pull/96)
 - Bonus, not mine: [Raise if ERB ](https://github.com/sstephenson/sprockets/pull/426)
 
+
+## Tests
+
+Here's a one liner to running tests
+
+```
+$ export RAILS_VERSION=4.0.0; bundle update; bundle exec rake test
+```
+
 ## License
 
 MIT
