@@ -16,10 +16,7 @@ class InheritNavigationTest < ActiveSupport::IntegrationCase
     assert_match "depends on 'application.css'", error.message
   end
 
-  # test 'erb' do
-  #    error = assert_raise(ActionView::Template::Error) do
-  #     visit('/foo/no_erb_tag_error')
-  #   end
-  # end
-
+  test 'no failure' do
+    visit('/foo/no_errors')
+  end
 end

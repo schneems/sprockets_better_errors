@@ -8,9 +8,6 @@ ENGINE_RAILS_ROOT=File.join(File.dirname(__FILE__), '../')
 require File.expand_path("../dummy/config/environment.rb",  __FILE__)
 require "rails/test_help"
 
-
-
-
 ActionMailer::Base.delivery_method = :test
 ActionMailer::Base.perform_deliveries = true
 ActionMailer::Base.default_url_options[:host] = "test.com"
@@ -22,8 +19,6 @@ require "capybara/rails"
 require 'capybara/poltergeist'
 Capybara.javascript_driver = :poltergeist
 Capybara.default_selector = :css
-
-
 
 # Run any available migration
 ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__)
