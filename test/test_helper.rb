@@ -25,3 +25,11 @@ ActiveRecord::Migrator.migrate File.expand_path("../dummy/db/migrate/", __FILE__
 
 # Load support files
 Dir["#{File.dirname(__FILE__)}/support/**/*.rb"].each { |f| require f }
+
+
+clear_assets = Proc.new do
+  `bundle exec rake -f ./test/dummy/Rakefile assets:clobber`
+  raise "could not clear assets" unless $?.success?
+end
+
+clear_assets.call

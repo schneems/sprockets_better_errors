@@ -44,5 +44,7 @@ module Dummy
     config.filter_parameters += [:password]
 
     config.assets.enabled = true
+
+    config.assets.raise_production_errors = true
   end
 end

@@ -11,6 +11,7 @@ module Sprockets::Rails::Helper
 
 
   def check_dependencies!(dep)
+    return unless Sprockets::Rails::Helper.raise_asset_errors
     return unless @_dependency_assets
     return if     @_dependency_assets.detect { |asset| asset.include?(dep) }
     raise DependencyError.new(self.pathname, dep)
