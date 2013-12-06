@@ -51,7 +51,7 @@ module Sprockets::Rails::Helper
     sources = args.dup
     sources.extract_options!
     sources.map do |source|
-      check_errors_for(source)
+      check_errors_for(source, "js")
     end
     orig_javascript_include_tag(*args)
   end
@@ -61,14 +61,18 @@ module Sprockets::Rails::Helper
     sources = args.dup
     sources.extract_options!
     sources.map do |source|
-      check_errors_for(source)
+      check_errors_for(source, "css")
     end
     orig_stylesheet_link_tag(*args)
   end
 
   protected
     # Raise errors when source does not exist or is not in the precomiled list
-    def check_errors_for(source)
+    def check_errors_for(source, extension=nil)
+      if extension && ! source.to_s.end_with?(".#{extension}")
+        source = "#{source}.#{extension}"
+      end
+
       return source unless Sprockets::Rails::Helper.raise_asset_errors
       return source if ["all", "defaults"].include?(source.to_s)
       return ""     if source.blank?
