@@ -30,14 +30,6 @@ module Sprockets::Rails::Helper
   include ActiveSupport::Configurable
   config_accessor :precompile, :assets, :raise_asset_errors
 
-  class AssetNotPresentError < StandardError
-    def initialize(source)
-      msg = "Asset not present: " <<
-            "could not find '#{source}' in any asset directory"
-      super(msg)
-    end
-  end
-
   class AssetFilteredError < StandardError
     def initialize(source)
       msg = "Asset filtered out and will not be served: " <<
@@ -83,7 +75,7 @@ module Sprockets::Rails::Helper
       return source if source =~ URI_REGEXP
 
       asset = lookup_asset_for_path(source)
-      raise AssetNotPresentError.new(source) if asset.blank?
+      return if asset.blank?
       raise AssetFilteredError.new(source)   if asset_needs_precompile?(source, asset.pathname.to_s)
     end
 
