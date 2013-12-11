@@ -85,7 +85,7 @@ Implementation is quite simple and limited to `helper.rb`, additional code is al
 
 ## Upstream
 
-Why not add this code upstream? I allready tried, there are several PR awaiting merge. If you found this Gem useful maybe give them a `:+1:`.
+Why not add this code upstream? I already tried, there are several PR awaiting merge. If you found this Gem useful maybe give them a `:+1:`.
 
 - [Raise On Dev asset not in Precompile list](https://github.com/rails/sprockets-rails/pull/84)
 - [Raise on improper dependency use](https://github.com/rails/sprockets-rails/pull/96)
