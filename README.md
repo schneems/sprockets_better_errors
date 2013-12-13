@@ -20,7 +20,7 @@ That would be AMAZING! Well this gem adds these types of helpful errors!
 
 ## Compatibility
 
-If you're using Rails 3.2 you will need to [enable the Rails 4 asset pipeline in Rails 3](https://discussion.heroku.com/t/using-the-rails-4-asset-pipeline-in-rails-3-apps-for-faster-deploys/205/3). Works out of the box with Rails 4.
+If you're using Rails 3.2 you will need to [enable the Rails 4 asset pipeline in Rails 3](https://discussion.heroku.com/t/using-the-rails-4-asset-pipeline-in-rails-3-apps-for-faster-deploys/205). Works out of the box with Rails 4.
 
 ## Install
 
