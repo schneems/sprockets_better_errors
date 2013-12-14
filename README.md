@@ -7,7 +7,7 @@ Errors, more of them, and better. For sprockets, specifically sprockets-rails. T
 Let's say you're referencing an asset in your view
 
 ```erb
-<%= stylesheet "search.css" %>
+<%= stylesheet_link_tag "search" %>
 ```
 
 This works in development but you'll find if you're precompiling your assets that it won't work in production. Why? By default sprockets is configured only to precompile `application.css`. Wouldn't it have been great if you could have been warned in development before you pushed to production and your site broke?
