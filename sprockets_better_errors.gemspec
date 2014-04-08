@@ -28,7 +28,10 @@ MSG
 
   gem.post_install_message = msg
 
-  gem.add_dependency 'sprockets-rails', ">= 1.0.0"
+  gem.add_dependency "sprockets-rails", ">= 1.0.0"
+  gem.add_dependency "actionpack", "< 4.1"
+  gem.add_dependency "activesupport", "< 4.1"
+
   gem.add_development_dependency "capybara", ">= 0.4.0"
   gem.add_development_dependency "launchy", "~> 2.1.0"
   gem.add_development_dependency "poltergeist"
