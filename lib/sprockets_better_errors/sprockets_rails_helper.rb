@@ -42,16 +42,16 @@ module Sprockets::Rails::Helper
 
   alias :orig_asset_path :asset_path
   def asset_path(source, options = {})
-    check_errors_for(source)
+    check_errors_for(source, options)
     path_to_asset(source, options)
   end
 
   alias :orig_javascript_include_tag :javascript_include_tag
   def javascript_include_tag(*args)
     sources = args.dup
-    sources.extract_options!
+    options = sources.extract_options!
     sources.map do |source|
-      check_errors_for(source)
+      check_errors_for(source, options)
     end
     orig_javascript_include_tag(*args)
   end
@@ -59,22 +59,22 @@ module Sprockets::Rails::Helper
   alias :orig_stylesheet_link_tag :stylesheet_link_tag
   def stylesheet_link_tag(*args)
     sources = args.dup
-    sources.extract_options!
+    options = sources.extract_options!
     sources.map do |source|
-      check_errors_for(source)
+      check_errors_for(source, options)
     end
     orig_stylesheet_link_tag(*args)
   end
 
   protected
     # Raise errors when source does not exist or is not in the precomiled list
-    def check_errors_for(source)
+    def check_errors_for(source, options)
       return source unless Sprockets::Rails::Helper.raise_asset_errors
       return source if ["all", "defaults"].include?(source.to_s)
       return ""     if source.blank?
       return source if source =~ URI_REGEXP
 
-      asset = lookup_asset_for_path(source)
+      asset = lookup_asset_for_path(source, options)
       return if asset.blank?
       raise AssetFilteredError.new(source)   if asset_needs_precompile?(source, asset.pathname.to_s)
     end
