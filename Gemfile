@@ -14,7 +14,7 @@ end
 
 gem "rails", rails
 
-if rails_version.include?("3.2")
+if rails_version.match(/^3\.2/)
   gem 'sprockets', '2.2.2.backport2'
   gem 'sprockets-rails', '2.0.0.backport1'
 end
