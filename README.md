@@ -2,7 +2,7 @@
 
 ## What
 
-Errors, more of them, and better. For sprockets, specifically sprockets-rails. The goal of this library is to make it painfully obvious when you've done something wrong with the rails asset pipeline. Like what?
+Errors, more of them, and better. For sprockets, specifically sprockets-rails < 2.1. The goal of this library is to make it painfully obvious when you've done something wrong with the rails asset pipeline. Like what?
 
 Let's say you're referencing an asset in your view
 
@@ -20,7 +20,9 @@ That would be AMAZING! Well this gem adds these types of helpful errors!
 
 ## Compatibility
 
-If you're using Rails 3.2 you will need to [enable the Rails 4 asset pipeline in Rails 3](https://discussion.heroku.com/t/using-the-rails-4-asset-pipeline-in-rails-3-apps-for-faster-deploys/205). Works out of the box with Rails 4.
+Rails > 3.2.0 and < 4.0.6.  See gemspec for details.
+
+If you're using Rails 3.2 you will need to [enable the Rails 4 asset pipeline in Rails 3](https://discussion.heroku.com/t/using-the-rails-4-asset-pipeline-in-rails-3-apps-for-faster-deploys/205).
 
 ## Install
 
