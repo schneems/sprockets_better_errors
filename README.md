@@ -13,7 +13,7 @@ Let's say you're referencing an asset in your view
 This works in development but you'll find if you're precompiling your assets that it won't work in production. Why? By default sprockets is configured only to precompile `application.css`. Wouldn't it have been great if you could have been warned in development before you pushed to production and your site broke?
 
 ```
-Asset filtered out and will not be served: add `config.assets.precompile += %w( search.js )` to `config/application.rb` and restart your server
+Asset filtered out and will not be served: add `config.assets.precompile += %w( search.css )` to `config/application.rb` and restart your server
 ```
 
 That would be AMAZING! Well this gem adds these types of helpful errors!
@@ -58,13 +58,13 @@ This is one of the most common asset errors I see at Heroku. We covered this err
 Let's say you're referencing an asset in your view
 
 ```erb
-<%= stylesheet "search.css" %>
+<%= stylesheet_link_tag "search.css" %>
 ```
 
 This works in development but you'll find if you're precompiling your assets that it won't work in production. Why? By default sprockets is configured only to precompile `application.css`. Wouldn't it have been great if you could have been warned in development before you pushed to production and your site broke?
 
 ```
-Asset filtered out and will not be served: add `config.assets.precompile += %w( search.js )` to `config/application.rb` and restart your server
+Asset filtered out and will not be served: add `config.assets.precompile += %w( search.css )` to `config/application.rb` and restart your server
 ```
 
 Add this gem and you get that error.
