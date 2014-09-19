@@ -68,15 +68,15 @@ module Sprockets::Rails::Helper
 
   protected
     # Raise errors when source does not exist or is not in the precomiled list
-    def check_errors_for(source)
+    def check_errors_for(source, options = {})
       return source unless Sprockets::Rails::Helper.raise_asset_errors
       return source if ["all", "defaults"].include?(source.to_s)
       return ""     if source.blank?
       return source if source =~ URI_REGEXP
 
-      asset = lookup_asset_for_path(source)
+      asset = lookup_asset_for_path(source, options)
       return if asset.blank?
-      raise AssetFilteredError.new(source)   if asset_needs_precompile?(source, asset.pathname.to_s)
+      raise AssetFilteredError.new(asset.logical_path)   if asset_needs_precompile?(asset.logical_path, asset.pathname.to_s)
     end
 
     # Returns true when an asset will not available after precompile is run
